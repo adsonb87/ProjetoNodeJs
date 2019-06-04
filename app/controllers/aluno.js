@@ -49,6 +49,15 @@ module.exports.apagarAluno = function(app,req,res){
 	});
 }
 
+module.exports.apagarAlunoRA = function(app,req,res){
+	var connection = app.config.dbConnection();
+	var alunoDao = new app.app.models.AlunoDAO(connection);
+
+	console.log(req.body);
+
+	
+}
+
 module.exports.menuAluno = function(app,req,res){
 	res.render("aluno/home_aluno");
 }

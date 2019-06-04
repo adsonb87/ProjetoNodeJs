@@ -13,6 +13,7 @@
 			<td>Nome</td>
 			<td>E-mail</td>
 			<td>Senha</td>
+			<!--<td>Ação</td>-->
 		</tr>
 
 		<% for(var i=0; i < alunos.length; i++){ %>
@@ -21,6 +22,10 @@
 				<td><%=alunos[i].nome_aluno%></td>
 				<td><%=alunos[i].email_aluno%></td>
 				<td><%=alunos[i].senha_aluno%></td>
+				<!--<td>
+					<a href="/aluno/apagarAluno/RA=<%= alunos[i].RA%>">Editar</a>
+					<a href="#">Excluir</a>
+				</td>-->
 			</tr>
 		<% } %>
 	</table>
