@@ -8,7 +8,7 @@ module.exports.salvarAluno = function (app, req, res) {
 	var alunoDao = new app.app.models.AlunoDAO(connection);
 
 	alunoDao.setAluno(aluno, function(error,result){
-		res.send(aluno);
+		res.redirect('/aluno/listar');
 	});
 }
 
@@ -33,4 +33,22 @@ module.exports.buscarAluno = function(app,req,res){
 	alunoDao.getAluno(RA,function(erro, result){
 		res.render("aluno/listar_alunos",{alunos : result});
 	});
+}
+
+module.exports.apagar = function(app,req,res){
+	res.render("aluno/apagar_aluno");
+}
+
+module.exports.apagarAluno = function(app,req,res){
+	var RA = req.body;
+	var connection = app.config.dbConnection();
+	var alunoDao = new app.app.models.AlunoDAO(connection);
+
+	alunoDao.deleteAluno(RA,function(erro,result){
+		res.redirect('/aluno/listar');
+	});
+}
+
+module.exports.menuAluno = function(app,req,res){
+	res.render("aluno/home_aluno");
 }

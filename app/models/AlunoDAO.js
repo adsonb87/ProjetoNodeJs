@@ -14,6 +14,10 @@ AlunoDAO.prototype.getAluno = function(RA, callback){
 	this._connection.query('select * from aluno where ?', RA, callback);
 }
 
+AlunoDAO.prototype.deleteAluno = function(RA, callback){
+	this._connection.query('delete from aluno where ?', RA, callback);
+}
+
 module.exports = function(){
 	return AlunoDAO;
 }

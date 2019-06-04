@@ -20,4 +20,15 @@ module.exports = function (app) {
 		app.app.controllers.aluno.buscarAluno(app,req,res);
 	});
 	
+	app.get('/aluno/apagar',function(req,res){
+		app.app.controllers.aluno.apagar(app,req,res);
+	});
+
+	app.post('/aluno/apagarAluno',function(req,res){
+		app.app.controllers.aluno.apagarAluno(app,req,res);
+	});
+
+	app.get('/aluno/',function(req,res){
+		app.app.controllers.aluno.menuAluno(app,req,res);
+	});
 };
