@@ -58,5 +58,21 @@ module.exports.editar = function(app,req,res){
 }
 
 module.exports.editarAluno = function(app,req,res){
+	var RA = req.body;
+	var connection = app.config.dbConnection();
+	var alunoDao = new app.app.models.AlunoDAO(connection);
 
+	alunoDao.getAluno(RA,function(erro,result){
+		res.render("aluno/editar_aluno", {aluno : result});
+	});
+}
+
+module.exports.updateAluno = function(app,req,res){
+	var aluno = req.body;
+	var connection = app.config.dbConnection();
+	var alunoDao = new app.app.models.AlunoDAO(connection);
+
+	alunoDao.updateAluno(aluno, function(erro,result){
+		res.redirect('/aluno/listar');
+	});
 }

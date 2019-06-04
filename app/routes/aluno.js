@@ -39,4 +39,9 @@ module.exports = function (app) {
 	app.post('/aluno/editarAluno',function(req,res){
 		app.app.controllers.aluno.editarAluno(app,req,res);
 	});
+
+	app.post('/aluno/updateAluno', function(req,res){
+		app.app.controllers.aluno.updateAluno(app,req,res);
+	});
+
 };

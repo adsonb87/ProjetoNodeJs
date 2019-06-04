@@ -6,18 +6,18 @@
 </head>
 <body>
 	<h1>Editar Aluno</h1>
-	<form action="" method = "post">
+	<form action="/aluno/updateAluno" method = "post">
 		<label>RA</label> </br>
-		<input type="text" name="RA" id="RA" placeholder="RA do Aluno"/>
+		<input type="text" name="RA" id="RA" placeholder="RA do Aluno" value="<%= aluno[0].RA%>"/>
 		</br>
 		<label>Nome do Aluno</label> </br>
-		<input type="text" name="nome_aluno" id="nome_aluno" placeholder="Nome do Aluno"/>
+		<input type="text" name="nome_aluno" id="nome_aluno" placeholder="Nome do Aluno" value="<%= aluno[0].nome_aluno%>"/>
 		</br> 
 		<label>E-mail</label> </br>
-		<input type="text" name="email_aluno" id="email_aluno" placeholder="e-mail"/>
+		<input type="text" name="email_aluno" id="email_aluno" placeholder="e-mail" value="<%= aluno[0].email_aluno%>"/>
 		</br>
 		<label>Senha</label> </br>
-		<input type="password" name="senha_aluno" id="senha_aluno" placeholder="senha"/>
+		<input type="password" name="senha_aluno" id="senha_aluno" placeholder="senha" value="<%= aluno[0].senha_aluno%>"/>
 		</br></br>
 		<input type="submit" value="Enviar" />
 	</form>

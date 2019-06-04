@@ -18,8 +18,8 @@ AlunoDAO.prototype.deleteAluno = function(RA, callback){
 	this._connection.query('delete from aluno where ?', RA, callback);
 }
 
-AlunoDAO.prototype.updateAluno = function(aluno, RA, callback){
-	this._connection.query('update aluno set ? where ?', aluno, RA, callback);
+AlunoDAO.prototype.updateAluno = function(aluno, callback){
+	this._connection.query('update aluno set ?', aluno, callback);
 }
 
 module.exports = function(){
