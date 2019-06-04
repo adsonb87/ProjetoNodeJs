@@ -4,8 +4,20 @@ module.exports = function (app) {
 		app.app.controllers.aluno.aluno_formulario(app,req,res);
 	});
 
-
 	app.post('/aluno/adicionar', function (req,res) {
 		app.app.controllers.aluno.salvarAluno(app,req,res);
 	});
+
+	app.get('/aluno/listar', function(req,res){
+		app.app.controllers.aluno.listarAlunos(app,req,res);
+	});
+
+	app.get('/aluno/buscar',function(req,res){
+		app.app.controllers.aluno.buscar(app,req,res);
+	});
+
+	app.post('/aluno/buscarAluno',function(req,res){
+		app.app.controllers.aluno.buscarAluno(app,req,res);
+	});
+	
 };
