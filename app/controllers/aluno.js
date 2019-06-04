@@ -52,3 +52,11 @@ module.exports.apagarAluno = function(app,req,res){
 module.exports.menuAluno = function(app,req,res){
 	res.render("aluno/home_aluno");
 }
+
+module.exports.editar = function(app,req,res){
+	res.render("aluno/buscar_editar_aluno");
+}
+
+module.exports.editarAluno = function(app,req,res){
+
+}

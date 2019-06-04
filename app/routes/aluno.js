@@ -31,4 +31,12 @@ module.exports = function (app) {
 	app.get('/aluno/',function(req,res){
 		app.app.controllers.aluno.menuAluno(app,req,res);
 	});
+
+	app.get('/aluno/editar',function(req,res){
+		app.app.controllers.aluno.editar(app,req,res);
+	});
+
+	app.post('/aluno/editarAluno',function(req,res){
+		app.app.controllers.aluno.editarAluno(app,req,res);
+	});
 };
