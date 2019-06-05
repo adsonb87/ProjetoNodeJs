@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulário de cadastro de alunos</title>
+</head>
+<body>
+	<h1>Adicionar Aluno</h1>
+	<form action="/aluno/adicionar" method = "post">
+		<label>RA</label> </br>
+		<input type="text" name="RA" id="RA" placeholder="RA do Aluno"/>
+		</br>
+		<label>Nome do Aluno</label> </br>
+		<input type="text" name="nome_aluno" id="nome_aluno" placeholder="Nome do Aluno"/>
+		</br> 
+		<label>E-mail</label> </br>
+		<input type="text" name="email_aluno" id="email_aluno" placeholder="e-mail"/>
+		</br>
+		<label>Senha</label> </br>
+		<input type="password" name="senha_aluno" id="senha_aluno" placeholder="senha"/>
+		</br></br>
+		<input type="submit" value="Enviar" />
+	</form>
+	<br/><a href="/aluno">Menu Principal</a>
+</body>
+</html>

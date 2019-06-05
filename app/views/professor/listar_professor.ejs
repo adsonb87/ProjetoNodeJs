@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Listar alunos</title>
+</head>
+<body>
+	<h1>Listar alunos</h1>
+	</br>
+	<table>
+		<tr>
+			<td>RA</td>
+			<td>Nome</td>
+			<td>E-mail</td>
+			<td>Senha</td>
+			<!--<td>Ação</td>-->
+		</tr>
+
+		<% for(var i=0; i < alunos.length; i++){ %>
+			<tr>
+				<td><%= alunos[i].RA%></td>
+				<td><%=alunos[i].nome_aluno%></td>
+				<td><%=alunos[i].email_aluno%></td>
+				<td><%=alunos[i].senha_aluno%></td>
+				<!--<td>
+					<a href="/aluno/apagarAluno/RA=<%= alunos[i].RA%>">Editar</a>
+					<a href="#">Excluir</a>
+				</td>-->
+			</tr>
+		<% } %>
+	</table>
+	<br/><a href="/aluno">Menu Principal</a>
+</body>
+</html>
