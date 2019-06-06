@@ -2,22 +2,22 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
-	<title>Edição de alunos</title>
+	<title>Edição de Professores</title>
 </head>
 <body>
-	<h1>Editar Aluno</h1>
+	<h1>Editar Professor</h1>
 	<form action="/aluno/updateAluno" method = "post">
 		<label>RA</label> </br>
-		<input type="text" name="RA" id="RA" placeholder="RA do Aluno" value="<%= aluno[0].RA%>"/>
+		<input type="text" name="matricula" id="matricula" placeholder="Matricula do Professor" value="<%= professor[0].matricula%>"/>
 		</br>
-		<label>Nome do Aluno</label> </br>
-		<input type="text" name="nome_aluno" id="nome_aluno" placeholder="Nome do Aluno" value="<%= aluno[0].nome_aluno%>"/>
+		<label>Nome do Professor</label> </br>
+		<input type="text" name="nome_professor" id="nome_professor" placeholder="Nome do Professor" value="<%= professor[0].nome_professor%>"/>
 		</br> 
 		<label>E-mail</label> </br>
-		<input type="text" name="email_aluno" id="email_aluno" placeholder="e-mail" value="<%= aluno[0].email_aluno%>"/>
+		<input type="text" name="email_professor" id="email_professor" placeholder="e-mail" value="<%= professor[0].email_professor%>"/>
 		</br>
 		<label>Senha</label> </br>
-		<input type="password" name="senha_aluno" id="senha_aluno" placeholder="senha" value="<%= aluno[0].senha_aluno%>"/>
+		<input type="password" name="senha_professor" id="senha_professor" placeholder="senha" value="<%= professor[0].senha_professor%>"/>
 		</br></br>
 		<input type="submit" value="Enviar" />
 	</form>
