@@ -1,51 +1,85 @@
-module.exports = function (app) {
+module.exports.professor_formulario = function(app,req,res){
+	res.render("professor/adicionar_professor");
+}
 
-	app.get('/professor/formulario',function(req,res){
-		app.app.controllers.professor.professor_formulario(app,req,res);
-	});
+module.exports.salvarProfessor = function (app, req, res) {
+	var professor = req.body;
+	var connection = app.config.dbConnection();
+	var professorDao = new app.app.models.ProfessorDAO(connection);
 
-	app.post('/professor/adicionar', function (req,res) {
-		app.app.controllers.professor.salvarProfessor(app,req,res);
+	professorDao.setProfessor(professor, function(error,result){
+		res.redirect('/professor/listar');
 	});
+}
 
-	app.get('/professor/listar', function(req,res){
-		app.app.controllers.professor.listarProfessores(app,req,res);
-	});
+module.exports.listarProfessores = function(app,req,res){
+	var connection = app.config.dbConnection();
+	var professorDao = new app.app.models.ProfessorDAO(connection);
 
-	app.get('/professor/buscar',function(req,res){
-		app.app.controllers.professor.buscar(app,req,res);
+	professorDao.listarProfessores(function(erro, result){
+		res.render("professor/listar_professores", {professores : result});	
 	});
+}
 
-	app.post('/professor/buscarProfessor',function(req,res){
-		app.app.controllers.professor.buscarProfessor(app,req,res);
-	});
-	
-	app.get('/professor/apagar',function(req,res){
-		app.app.controllers.professor.apagar(app,req,res);
-	});
+module.exports.buscar = function(app,req,res){
+	res.render("professor/buscar_professor");
+}
 
-	app.post('/professor/apagarProfessor',function(req,res){
-		app.app.controllers.professor.apagarProfessor(app,req,res);
-	});
+module.exports.buscarProfessor = function(app,req,res){
+	var matricula = req.body;
+	var connection = app.config.dbConnection();
+	var professorDao = new app.app.models.ProfessorDAO(connection);
 
-	app.get('/professor/apagarProfessor/RA=?',function(req,res){
-		app.app.controllers.professor.apagarProfessorMatricula(app,req,res);
+	professorDao.getAluno(matricula,function(erro, result){
+		res.render("professor/listar_professores",{professores : result});
 	});
+}
 
-	app.get('/professor/',function(req,res){
-		app.app.controllers.professor.menuProfessor(app,req,res);
+module.exports.apagar = function(app,req,res){
+	res.render("professor/apagar_professor");
+}
+
+module.exports.apagarProfessor = function(app,req,res){
+	var matricula = req.body;
+	var connection = app.config.dbConnection();
+	var professorDao = new app.app.models.ProfessorDAO(connection);
+
+	professorDao.deleteProfessor(matricula,function(erro,result){
+		res.redirect('/professor/listar');
 	});
+}
 
-	app.get('/professor/editar',function(req,res){
-		app.app.controllers.professor.editar(app,req,res);
+module.exports.apagarProfessorMatricula = function(app,req,res){
+	var connection = app.config.dbConnection();
+	var professorDao = new app.app.models.ProfessorDAO(connection);
+
+	console.log(req.body);
+}
+
+module.exports.menuProfessor = function(app,req,res){
+	res.render("professor/home_professor");
+}
+
+module.exports.editar = function(app,req,res){
+	res.render("professor/buscar_editar_professor");
+}
+
+module.exports.editarProfessor = function(app,req,res){
+	var matricula = req.body;
+	var connection = app.config.dbConnection();
+	var professorDao = new app.app.models.ProfessorDAO(connection);
+
+	professorDao.getProfessor(matricula,function(erro,result){
+		res.render("professor/editar_professor", {professor : result});
 	});
+}
 
-	app.post('/professor/editarProfessor',function(req,res){
-		app.app.controllers.professor.editarProfessor(app,req,res);
+module.exports.updateProfessor = function(app,req,res){
+	var professor = req.body;
+	var connection = app.config.dbConnection();
+	var professorDao = new app.app.models.ProfessorDAO(connection);
+
+	professorDao.updateProfessor(professor, function(erro,result){
+		res.redirect('/professor/listar');
 	});
-
-	app.post('/professor/updateProfessor', function(req,res){
-		app.app.controllers.professor.updateProfessor(app,req,res);
-	});
-
-};
+}

@@ -18,10 +18,10 @@
 
 		<% for(var i=0; i < professores.length; i++){ %>
 			<tr>
-				<td><%=professores[i].RA%></td>
-				<td><%=professores[i].nome_aluno%></td>
-				<td><%=professores[i].email_aluno%></td>
-				<td><%=professores[i].senha_aluno%></td>
+				<td><%=professores[i].matricula%></td>
+				<td><%=professores[i].nome_professor%></td>
+				<td><%=professores[i].email_professor%></td>
+				<td><%=professores[i].senha_professor%></td>
 				<!--<td>
 					<a href="/aluno/apagarAluno/RA=<%= professores[i].matricula%>">Editar</a>
 					<a href="#">Excluir</a>
@@ -29,6 +29,6 @@
 			</tr>
 		<% } %>
 	</table>
-	<br/><a href="/aluno">Menu Principal</a>
+	<br/><a href="/professor">Menu Principal</a>
 </body>
 </html>

@@ -2,7 +2,7 @@ function ProfessorDAO(connection) {
 	this._connection = connection;
 }
 
-ProfessorDAO.prototype.listaProfessores = function(callback) {
+ProfessorDAO.prototype.listarProfessores = function(callback) {
 	this._connection.query('select * from professor', callback);
 }
 
