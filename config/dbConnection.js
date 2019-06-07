@@ -4,7 +4,7 @@ var connMysql = function () {
 	return connection = mysql.createConnection({
 		host : 'localhost',
 		user : 'root',
-		password : '1234',
+		password : 'password',
 		database : 'diario_de_classe'
 	});
 }

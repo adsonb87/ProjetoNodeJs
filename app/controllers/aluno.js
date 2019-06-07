@@ -1,3 +1,7 @@
+module.exports.menuAluno = function(app,req,res){
+	res.render("aluno/home_aluno");
+}
+
 module.exports.aluno_formulario = function(app,req,res){
 	res.render("aluno/adicionar_aluno");
 }
@@ -56,10 +60,6 @@ module.exports.apagarAlunoRA = function(app,req,res){
 	console.log(req.body);
 
 	
-}
-
-module.exports.menuAluno = function(app,req,res){
-	res.render("aluno/home_aluno");
 }
 
 module.exports.editar = function(app,req,res){
