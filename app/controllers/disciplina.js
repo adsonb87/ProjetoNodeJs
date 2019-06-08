@@ -16,12 +16,12 @@ module.exports.salvarDisciplina = function(app,req,res){
 	});
 }
 
-module.exports.listarDisciplina = function(app,req,res){
+module.exports.listarDisciplinas = function(app,req,res){
 	var connection = app.config.dbConnection();
 	var disciplinaDao = new app.app.models.DisciplinaDAO(connection);
 
-	disciplinaDao.listarDisciplina(disciplina, function(erro, result){
-		res.render("disciplina/listar_disciplinas", {disciplinas : result});
+	disciplinaDao.listarDisciplinas(function(erro, result){
+		res.render("disciplina/listar_disciplina", {disciplinas : result});
 	});
 }
 
@@ -31,6 +31,7 @@ module.exports.buscar = function(app,req,res){
 
 module.exports.buscarDisciplina = function(app,req,res){
 	var codigo_disciplina = req.body;
+	console.log(codigo_disciplina);
 	var connection = app.config.dbConnection();
 	var disciplinaDao = new app.app.models.DisciplinaDAO(connection);
 
