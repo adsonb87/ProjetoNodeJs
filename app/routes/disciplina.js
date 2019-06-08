@@ -1,7 +1,7 @@
 module.exports = function (app) {
 	
 	app.get('/disciplina/' ,function(req,res){
-		app.app.controllers.disciplina.menuDisciplina(app,req,res);
+		app.app.controllers.disciplina.listarDisciplinas(app,req,res);
 	});
 
 	app.get('/disciplina/formulario',function(req,res){
