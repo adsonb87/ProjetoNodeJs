@@ -32,7 +32,7 @@ module.exports = function (app) {
 		app.app.controllers.aluno.apagarAlunoRA(app,req,res);
 	});
 
-	app.get('/aluno/',function(req,res){
+	app.get('/aluno',function(req,res){
 		app.app.controllers.aluno.menuAluno(app,req,res);
 	});
 

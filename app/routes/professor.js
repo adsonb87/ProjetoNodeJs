@@ -32,7 +32,7 @@ module.exports = function (app) {
 		app.app.controllers.professor.apagarProfessorMatricula(app,req,res);
 	});
 
-	app.get('/professor/',function(req,res){
+	app.get('/professor',function(req,res){
 		app.app.controllers.professor.menuProfessor(app,req,res);
 	});
 

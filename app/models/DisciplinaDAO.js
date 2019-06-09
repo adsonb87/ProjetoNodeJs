@@ -10,11 +10,11 @@ DisciplinaDAO.prototype.setDisciplina = function(disciplina, callback){
 	this._connection.query('insert into disciplina set ?',disciplina,callback);
 }
 
-DisciplinaDAO.prototype.getDisciplina = function(codigo_disciplina, RA, callback){
+DisciplinaDAO.prototype.getDisciplina = function(codigo_disciplina, callback){
 	this._connection.query('select * from disciplina where ?', codigo_disciplina, callback);
 }
 
-DisciplinaDAO.prototype.deleteDisciplina = function(RA, callback){
+DisciplinaDAO.prototype.deleteDisciplina = function(codigo_disciplina, callback){
 	this._connection.query('delete from disciplina where ?', codigo_disciplina, callback);
 }
 
