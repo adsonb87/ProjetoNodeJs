@@ -1,5 +1,9 @@
-module.exports.professor_formulario = function(app,req,res){
+module.exports.menuProfessor = function(app,req,res){
 	res.redirect('/professor/listar');
+}
+
+module.exports.professor_formulario = function(app,req,res){
+	res.render("professor/adicionar_professor");
 }
 
 module.exports.salvarProfessor = function (app, req, res) {
@@ -30,7 +34,7 @@ module.exports.buscarProfessor = function(app,req,res){
 	var connection = app.config.dbConnection();
 	var professorDao = new app.app.models.ProfessorDAO(connection);
 
-	professorDao.getAluno(matricula,function(erro, result){
+	professorDao.getProfessor(matricula,function(erro, result){
 		res.render("professor/listar_professores",{professores : result});
 	});
 }
@@ -54,10 +58,6 @@ module.exports.apagarProfessorMatricula = function(app,req,res){
 	var professorDao = new app.app.models.ProfessorDAO(connection);
 
 	console.log(req.body);
-}
-
-module.exports.menuProfessor = function(app,req,res){
-	res.render("professor/home_professor");
 }
 
 module.exports.editar = function(app,req,res){

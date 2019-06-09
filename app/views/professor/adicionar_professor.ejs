@@ -2,25 +2,69 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<title>Formulário de cadastro de professores</title>
 </head>
 <body>
-	<h1>Adicionar Professor</h1>
-	<form action="/professor/adicionar" method = "post">
-		<label>RA</label> </br>
-		<input type="text" name="matricula" id="matricula" placeholder="Matricula do Professor"/>
-		</br>
-		<label>Nome do Aluno</label> </br>
-		<input type="text" name="nome_professor" id="nome_professor" placeholder="Nome do Professor"/>
-		</br> 
-		<label>E-mail</label> </br>
-		<input type="text" name="email_professor" id="email_professor" placeholder="e-mail"/>
-		</br>
-		<label>Senha</label> </br>
-		<input type="password" name="senha_professor" id="senha_professor" placeholder="senha"/>
-		</br></br>
-		<input type="submit" value="Enviar" />
-	</form>
-	<br/><a href="/professor">Menu Principal</a>
+	<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">Professor</a>
+		<a class="navbar-brand" href="/diariodeclasse">Home</a>
+	</nav>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-sm-2">
+				<ul class="nav flex-column">
+				  <li class="nav-item">
+				    <a class="nav-link" href="/professor/formulario">Adicionar</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="/professor/buscar">Buscar</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="/professor/listar">Listar</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="/professor/editar">Editar</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="/professor/apagar">Apagar</a>
+				  </li>
+				</ul>
+			</div>
+			<div class="col-sm-8">
+				<form action="/professor/adicionar" method = "post">
+					<div class="form-row">
+						<div class="form-group col-md-5">
+							<label for="matricula">Matricula do Professor</label>
+							<input type="text" name="matricula" id="matricula" 
+							placeholder="Matricula do Professor" class="form-control">
+						</div>
+						<div class="form-group col-md-7">
+							<label for="nome_professor">Nome do Professor</label>
+							<input type="text" class="form-control" id="nome_professor" name="nome_professor" 
+							placeholder="Nome do Professor">
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="email_professor">Email</label>
+							<input type="text" class="form-control" id="email_professor" name="email_professor" 
+							placeholder="Email do Professor">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="senha_professor">Senha</label>
+							<input type="password" class="form-control" id="senha_professor" name="senha_professor" 
+							placeholder="Senha do Professor">
+						</div>
+					</div>
+				  <button type="submit" class="btn btn-primary">Enviar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
