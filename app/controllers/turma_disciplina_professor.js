@@ -1,5 +1,5 @@
 module.exports.menuTurma_disciplina_professor = function(app,req,res){
-	res.render("turma_disciplina_professor/home_turma_disciplina_professor");
+	res.redirect('/turma_disciplina_professor/listar');
 }
 
 module.exports.turma_disciplina_professor_formulario = function(app,req,res){

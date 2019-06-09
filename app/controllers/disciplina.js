@@ -1,5 +1,5 @@
 module.exports.menuDisciplina = function(app,req,res){
-	res.render("disciplina/home_disciplina");
+	res.redirect('/disciplina/listar');
 }
 
 module.exports.disciplina_formulario = function(app,req,res){

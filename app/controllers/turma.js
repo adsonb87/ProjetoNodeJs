@@ -1,5 +1,5 @@
 module.exports.menuTurma = function(app,req,res){
-	res.render("turma/home_turma");
+	res.redirect('/turma/listar');
 }
 
 module.exports.turma_formulario = function(app,req,res){

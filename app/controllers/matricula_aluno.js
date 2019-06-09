@@ -1,5 +1,5 @@
 module.exports.menuMatricula_aluno = function(app,req,res){
-	res.render("matricula_aluno/home_matricula_aluno");
+	res.redirect('/matricula_aluno/listar');
 }
 
 module.exports.matricula_aluno_formulario = function(app,req,res){

@@ -1,5 +1,5 @@
 module.exports.professor_formulario = function(app,req,res){
-	res.render("professor/adicionar_professor");
+	res.redirect('/professor/listar');
 }
 
 module.exports.salvarProfessor = function (app, req, res) {
