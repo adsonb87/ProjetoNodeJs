@@ -56,8 +56,9 @@ module.exports.apagarAluno = function(app,req,res){
 module.exports.apagarAlunoRA = function(app,req,res){
 	var connection = app.config.dbConnection();
 	var alunoDao = new app.app.models.AlunoDAO(connection);
+	var RA = req.params.RA;
 
-	console.log(req.body);
+	console.log(RA);
 
 	
 }
