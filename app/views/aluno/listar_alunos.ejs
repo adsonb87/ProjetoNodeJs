@@ -39,6 +39,7 @@
 					      <th scope="col">Nome Aluno</th>
 					      <th scope="col">Email</th>
 					      <th scope="col">Senha</th>
+					      <th scope="col">Ação</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -49,8 +50,8 @@
 								<td><%=alunos[i].email_aluno%></td>
 								<td><%=alunos[i].senha_aluno%></td>
 								<td>
-									<a href="/aluno/apagarAluno/<%=alunos[i].RA%>">teste</a>
-									<a href="#">Excluir</a>
+									<a href="/aluno/editarAluno/<%=alunos[i].RA%>">Editar</a>
+									<a href="/aluno/apagarAluno/<%=alunos[i].RA%>">Excluir</a>
 								</td>
 							</tr>
 						<% } %>

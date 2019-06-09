@@ -57,10 +57,20 @@ module.exports.apagarAlunoRA = function(app,req,res){
 	var connection = app.config.dbConnection();
 	var alunoDao = new app.app.models.AlunoDAO(connection);
 	var RA = req.params.RA;
-
 	console.log(RA);
+	alunoDao.deleteAluno(RA,function(erro,result){
+		res.redirect('/aluno/listar');
+	});
+}
 
-	
+module.exports.editarAlunoRA = function(app,req,res){
+	var connection = app.config.dbConnection();
+	var alunoDao = new app.app.models.AlunoDAO(connection);
+	var RA = req.params.RA;
+	console.log(RA);
+	alunoDao.getAluno(RA,function(erro,result){
+		res.render("aluno/editar_aluno", {aluno : result});
+	});
 }
 
 module.exports.editar = function(app,req,res){
