@@ -7,61 +7,61 @@
 </head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
-			  <a class="navbar-brand" href="#">Home</a>
-			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			    <span class="navbar-toggler-icon"></span>
-			  </button>
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			    <ul class="navbar-nav mr-auto">
-
-			      <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          Aluno
-			        </a>
-			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			          <a class="dropdown-item" href="aluno/formulario">Adicionar Aluno</a>
-			          <a class="dropdown-item" href="aluno/buscar">Buscar Aluno</a>
-			          <a class="dropdown-item" href="aluno/listar">Listar Alunos</a>
-			          <a class="dropdown-item" href="aluno/editar">Editar Aluno</a>
-			          <a class="dropdown-item" href="aluno/apagar">Apagar Aluno</a>
-			        </div>
-			      </li>
-
-			      <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          Professor
-			        </a>
-			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			          <a class="dropdown-item" href="professor/formulario">Adicionar Professor</a>
-			          <a class="dropdown-item" href="professor/buscar">Buscar Professores</a>
-			          <a class="dropdown-item" href="professor/listar">Listar Professores</a>
-			          <a class="dropdown-item" href="professor/editar">Editar Professor</a>
-			          <a class="dropdown-item" href="professor/apagar">Apagar Professor</a>
-			        </div>
-			      </li>
-
-			    </ul>
-			  </div>
-			</nav>
-
-			
-		<h1>Adicionar Aluno</h1>
-			<form action="/aluno/adicionar" method = "post">
-				<label>RA</label> </br>
-				<input type="text" name="RA" id="RA" placeholder="RA do Aluno"/>
-				</br>
-				<label>Nome do Aluno</label> </br>
-				<input type="text" name="nome_aluno" id="nome_aluno" placeholder="Nome do Aluno"/>
-				</br> 
-				<label>E-mail</label> </br>
-				<input type="text" name="email_aluno" id="email_aluno" placeholder="e-mail"/>
-				</br>
-				<label>Senha</label> </br>
-				<input type="password" name="senha_aluno" id="senha_aluno" placeholder="senha"/>
-				</br></br>
-				<input type="submit" value="Enviar" />
-			</form>
-		<br/><a href="/aluno">Menu Principal</a>
+		  <a class="navbar-brand" href="#">Aluno</a>
+		  <a class="navbar-brand" href="/diariodeclasse">Home</a>
+		</nav>
+		<div class="col-sm-8">
+			<div class="row">
+				<div class="col-sm-2">
+					<ul class="nav flex-column">
+					  <li class="nav-item">
+					    <a class="nav-link" href="/aluno/formulario">Adicionar</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="/aluno/buscar">Buscar</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="/aluno/listar">Listar</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="/aluno/editar">Editar</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="/aluno/apagar">Apagar</a>
+					  </li>
+					</ul>
+				</div>
+				<div class="col-sm-8">
+					<form action="/aluno/adicionar" method = "post">
+						<div class="form-row">
+							<div class="form-group col-md-4">
+								<label for="RA">RA do Aluno</label>
+								<input type="text" name="RA" id="RA" 
+								placeholder="RA do Aluno" class="form-control">
+							</div>
+							<div class="form-group col-md-8">
+								<label for="nome_aluno">Nome do Aluno</label>
+								<input type="text" class="form-control" id="nome_aluno" name="nome_aluno" 
+								placeholder="Nome do Aluno">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="email_aluno">Email</label>
+								<input type="text" class="form-control" id="email_aluno" name="email_aluno" 
+								placeholder="Email do Aluno">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="senha_aluno">Senha</label>
+								<input type="password" class="form-control" id="senha_aluno" name="senha_aluno" 
+								placeholder="Senha do Aluno">
+							</div>
+						</div>
+					  <button type="submit" class="btn btn-primary">Enviar</button>
+					</form>
+				</div>
+			</div>
+		</div>
 
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

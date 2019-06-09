@@ -1,5 +1,5 @@
 module.exports.menuAluno = function(app,req,res){
-	res.render("aluno/home_aluno");
+	res.redirect('/aluno/listar');
 }
 
 module.exports.aluno_formulario = function(app,req,res){
