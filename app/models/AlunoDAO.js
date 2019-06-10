@@ -15,7 +15,8 @@ AlunoDAO.prototype.getAluno = function(RA, callback){
 }
 
 AlunoDAO.prototype.deleteAluno = function(RA, callback){
-	this._connection.query('delete from aluno where ?', RA, callback);
+	console.log(RA);
+	this._connection.query('delete from aluno where RA = ?', RA, callback);
 }
 
 AlunoDAO.prototype.updateAluno = function(aluno, callback){
