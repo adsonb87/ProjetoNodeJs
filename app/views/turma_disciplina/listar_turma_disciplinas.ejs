@@ -29,6 +29,18 @@
 					  <li class="nav-item">
 					    <a class="nav-link" href="/turma_disciplina/apagar">Apagar</a>
 					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="/turma_disciplina/formularioProfessor">Adicionar Professor</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="/turma_disciplina/listarProfessores">Listar Professores</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="/turma_disciplina/formularioAluno">Matricular Aluno</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="/turma_disciplina/listarMatriculaAluno">Listar Alunos Matriculados</a>
+					  </li>
 					</ul>
 				</div>
 				<div class="col-sm-10">
@@ -37,7 +49,9 @@
 					    <tr>
 					      <th scope="col">Código Turma/Disciplina</th>
 					      <th scope="col">Código da Disciplina</th>
+					      <th scope="col">Nome da Disciplina</th>
 					      <th scope="col">Código da Turma</th>
+					      <th scope="col">Turma</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -45,7 +59,9 @@
 							<tr>
 								<td><%=turma_disciplinas[i].id_turma_disciplina%></td>
 								<td><%=turma_disciplinas[i].codigo_disciplina%></td>
-								<td><%=turma_disciplinas[i].codigo_turma%></td>
+								<td><%=turma_disciplinas[i].nome_disciplina%></td>
+	   							<td><%=turma_disciplinas[i].codigo_turma%></td>
+	   							<td><%=turma_disciplinas[i].turma%></td>
 							</tr>
 						<% } %>
 					  </tbody>

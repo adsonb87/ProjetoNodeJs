@@ -12,7 +12,31 @@ module.exports = function (app) {
 		app.app.controllers.turma_disciplina.salvarTurma_disciplina(app,req,res);
 	});
 
+	app.get('/turma_disciplina/formularioAluno',function(req,res){
+		app.app.controllers.turma_disciplina.turmaDisciplinaMatriculaAluno(app,req,res);
+	});
+
+	app.post('/turma_disciplina/matricularAluno', function(req,res){
+		app.app.controllers.turma_disciplina.matricularAluno(app,req,res);
+	});
+
+	app.get('/turma_disciplina/formularioProfessor',function(req,res){
+		app.app.controllers.turma_disciplina.turma_disciplina_formularioProfessor(app,req,res);
+	});
+
+	app.post('/turma_disciplina/adicionarProfessor', function(req,res){
+		app.app.controllers.turma_disciplina.salvarTurma_disciplinaProfessor(app,req,res);
+	});
+
 	app.get('/turma_disciplina/listar', function(req,res){
+		app.app.controllers.turma_disciplina.listarTurmaDisciplinas(app,req,res);
+	});
+
+	app.get('/turma_disciplina/listarMatriculaAluno', function(req,res){
+		app.app.controllers.turma_disciplina.listarMatriculaAluno(app,req,res);
+	});
+
+	app.get('/turma_disciplina/listarProfessores', function(req,res){
 		app.app.controllers.turma_disciplina.listarTurma_disciplinas(app,req,res);
 	});
 

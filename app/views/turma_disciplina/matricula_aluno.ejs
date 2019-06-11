@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<title>Buscar Turma/Disciplina</title>
+	<title>Formulário de matricula do aluno</title>
 </head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
@@ -44,13 +44,20 @@
 					</ul>
 				</div>
 				<div class="col-sm-8">
-					<form action="/turma_disciplina/buscarTurma_disciplina" method = "post">
-						<div class="form-group">
-						    <label for="id_turma_disciplina">Código da Turma/Disciplina</label>
-						    <input type="text" name="id_turma_disciplina" id="id_turma_disciplina" 
-						    placeholder="Codigo da Turma/Disciplina" class="form-control">
-						</div>
-						<button type="submit" class="btn btn-primary">Buscar</button>
+					<form action="/turma_disciplina/matricularAluno" method = "post">
+					  <div class="form-group">
+					    <label for="id_turma_disciplina">Código da Turma/Disciplina</label>
+					    <input type="text" name="id_turma_disciplina" id="id_turma_disciplina" 
+					    placeholder="Codigo da Turma/Disciplina" class="form-control">
+					  </div>
+					
+					  <div class="form-group">
+					    <label for="RA">RA do Aluno</label>
+					    <input type="text" class="form-control" id="RA" name="RA" 
+					  	placeholder="RA do Aluno">
+					  </div>
+
+					  <button type="submit" class="btn btn-primary">Enviar</button>
 					</form>
 				</div>
 			</div>
