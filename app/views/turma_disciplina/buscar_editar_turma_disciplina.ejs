@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<title>Edição de Turma</title>
+	<title>Buscar Turma/Disciplina</title>
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
-		  <a class="navbar-brand" href="#">Turma</a>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+		  <a class="navbar-brand" href="#">Turma/Disciplina</a>
 		  <a class="navbar-brand" href="/diariodeclasse">Home</a>
 		</nav>
 		<div class="col-sm-8">
@@ -15,37 +15,30 @@
 				<div class="col-sm-2">
 					<ul class="nav flex-column">
 					  <li class="nav-item">
-					    <a class="nav-link" href="/turma/formulario">Adicionar</a>
+					    <a class="nav-link" href="/turma_disciplina/formulario">Adicionar</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="/turma/buscar">Buscar</a>
+					    <a class="nav-link" href="/turma_disciplina/buscar">Buscar</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="/turma/listar">Listar</a>
+					    <a class="nav-link" href="/turma_disciplina/listar">Listar</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="/turma/editar">Editar</a>
+					    <a class="nav-link" href="/turma_disciplina/editar">Editar</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="/turma/apagar">Apagar</a>
+					    <a class="nav-link" href="/turma_disciplina/apagar">Apagar</a>
 					  </li>
 					</ul>
 				</div>
 				<div class="col-sm-8">
-					<form action="/turma/updateTurma" method = "post">
-					  <div class="form-group">
-					    <label for="codigo_turma">Código da Turma</label>
-					    <input type="text" name="codigo_turma" id="codigo_turma" 
-					    placeholder="Codigo da Turma" class="form-control" value="<%= turma[0].codigo_turma%>">
-					  </div>
-
-					  <div class="form-group">
-					    <label for="turma">Turma</label>
-					    <input type="text" class="form-control" id="turma" name="turma" 
-					    placeholder="Nome da Turma" value="<%= turma[0].turma%>">
-					  </div>
-
-					  <button type="submit" class="btn btn-primary">Enviar</button>
+					<form action="/turma_disciplina/editarTurma_disciplina" method = "post">
+						<div class="form-group">
+						    <label for="id_turma_disciplina">Código da Turma/Disciplina</label>
+						    <input type="text" name="id_turma_disciplina" id="id_turma_disciplina" 
+						    placeholder="Codigo da Turma/Disciplina" class="form-control">
+						</div>
+						<button type="submit" class="btn btn-primary">Buscar</button>
 					</form>
 				</div>
 			</div>
@@ -54,5 +47,5 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+	</body>
 </html>

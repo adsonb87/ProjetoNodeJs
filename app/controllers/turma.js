@@ -21,7 +21,7 @@ module.exports.listarTurmas = function(app,req,res){
 	var turmaDao = new app.app.models.TurmaDAO(connection);
 
 	turmaDao.listarTurmas(function(erro, result){
-		res.render("turma/listar_turma", {turmas : result});
+		res.render("turma/listar_turmas", {turmas : result});
 	});
 }
 
@@ -31,7 +31,6 @@ module.exports.buscar = function(app,req,res){
 
 module.exports.buscarTurma = function(app,req,res){
 	var codigo_turma = req.body;
-	console.log(codigo_turma);
 	var connection = app.config.dbConnection();
 	var turmaDao = new app.app.models.TurmaDAO(connection);
 
