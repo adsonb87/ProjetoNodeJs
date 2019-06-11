@@ -21,7 +21,7 @@ module.exports.listarTurma_disciplinas = function(app,req,res){
 	var turma_disciplinaDao = new app.app.models.Turma_disciplinaDAO(connection);
 
 	turma_disciplinaDao.listarTurma_disciplinas(function(erro, result){
-		res.render("turma_disciplina/listar_turma_disciplina", {turma_disciplinas : result});
+		res.render("turma_disciplina/listar_turma_disciplinas", {turma_disciplinas : result});
 	});
 }
 
