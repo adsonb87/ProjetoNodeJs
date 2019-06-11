@@ -48,6 +48,14 @@ module.exports = function (app) {
 		app.app.controllers.turma_disciplina.buscarTurma_disciplina(app,req,res);
 	});
 
+	app.get('/turma_disciplina/buscarMatriculaAluno', function(req,res){
+		app.app.controllers.turma_disciplina.buscarMatriculaAluno(app,req,res);
+	});
+
+	app.post('/turma_disciplina/buscarMatricula', function(req,res){
+		app.app.controllers.turma_disciplina.buscarMatricula(app,req,res);
+	});
+
 	app.get('/turma_disciplina/apagar', function(req,res){
 		app.app.controllers.turma_disciplina.apagar(app,req,res);
 	});

@@ -78,12 +78,25 @@ module.exports.buscar = function(app,req,res){
 
 module.exports.buscarTurma_disciplina = function(app,req,res){
 	var id_turma_disciplina = req.body;
-	console.log(id_turma_disciplina);
 	var connection = app.config.dbConnection();
 	var turma_disciplinaDao = new app.app.models.Turma_disciplinaDAO(connection);
 
 	turma_disciplinaDao.getTurma_disciplina(id_turma_disciplina,function(erro, result){
 		res.render("turma_disciplina/listar_turma_disciplinas",{turma_disciplinas : result});
+	});
+}
+
+module.exports.buscarMatriculaAluno = function(app,req,res){
+	res.render("turma_disciplina/buscar_matricula_aluno");
+}
+
+module.exports.buscarMatricula = function(app,req,res){
+	var RA = req.body;
+	var connection = app.config.dbConnection();
+	var turma_disciplinaDao = new app.app.models.Turma_disciplinaDAO(connection);
+
+	turma_disciplinaDao.alunosMatriculados(RA,function(erro, result){
+		res.render("turma_disciplina/listar_matricula_aluno",{turma_disciplinas : result});
 	});
 }
 
